@@ -2,6 +2,11 @@
 Constants
 =========
 
+Useful Constants
+================
+
+You'll probably be using these constants frequently while writing code.
+
 .. cpp:var:: long MAP_SIZE = 30
 
 	Side length of map.
@@ -10,13 +15,21 @@ Constants
 
 	Side length of each tile on the map.
 
+Not So Useful Constants
+=======================
+
+These values may be good to know, but aren't very important while writing code.
+
+Money Stuff
+-----------
+
 .. cpp:var:: long MONEY_START = 300
 
 	Amount of money each player has at the start of the game.
 
 .. cpp:var:: long MONEY_MAX = INT64_MAX
 
-	Maxiumm amount of money each player can have.
+	Maximum amount of money each player can have.
 
 .. cpp:var:: vector<long> TOWER_KILL_REWARD_AMOUNTS = {300, 500, 700}
 
@@ -29,6 +42,9 @@ Constants
 .. cpp:var:: vector<long> TOWER_SUICIDE_REWARD_AMOUNT = {150, 250, 400}
 
 	Rewards for tower sepukku. Indexed by tower level - 1.
+
+Soldier Stuff
+-------------
 
 .. cpp:var:: long NUM_SOLDIERS = 20
 
@@ -54,6 +70,9 @@ Constants
 
 	Number of turns a soldier takes to respawn.
 
+Tower Stuff
+-----------
+
 .. cpp:var:: vector<long> TOWER_HPS = {7000, 10000, 15000}
 
 	Maximum HP of towers. Indexed by tower level - 1.
@@ -70,7 +89,6 @@ Constants
 
 	A tower range of 2 means that from the center of the tower, a tower controls 2 squares in
 	each direction in a square shape, so it would control 2+1+2 times 2+1+2 = 25 squares.
-
 
 .. cpp:var:: long MAX_NUM_TOWERS = 15
 

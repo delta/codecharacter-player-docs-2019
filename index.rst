@@ -7,12 +7,13 @@ Welcome to Code Character's documentation!
 ==========================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    overview
    rules
    constants
+   vector
    player_state
 
 
