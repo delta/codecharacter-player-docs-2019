@@ -8,10 +8,10 @@ It contains every data structure we use to describe the state of the game.
 
 *Note:* You can think of two ways to describe position in this game - by counting the tiles in X and Y directions (0-based counting of course, we're civilized people here), and by the actual coordinates (tiles have a size). Whenever we refer to position, we always mean the actual coordinates, not the tile count, unless explicitly otherwise mentioned.
 
-PlayerMapElement
+MapElement
 ================
 
-.. cpp:class:: PlayerMapElement
+.. cpp:class:: MapElement
 
 	Represents a tile on the map
 
@@ -35,10 +35,10 @@ PlayerMapElement
 
 
 
-PlayerSoldier
+Soldier
 =============
 
-.. cpp:class:: PlayerSoldier
+.. cpp:class:: Soldier
 
 	Represents a soldier
 
@@ -53,6 +53,10 @@ PlayerSoldier
 	.. cpp:member:: long hp
 
 		The soldier's current HP
+
+	.. cpp:member:: SoldierState state
+
+		An enum describing the state of the soldier. Can be ``SoldierState::IDLE``, ``SoldierState::MOVE``, ``SoldierState::ATTACK``, ``SoldierState::PURSUIT`` or ``SoldierState::DEAD``.
 
 	*Below members are writable, only one may be set per turn per soldier*
 
@@ -70,10 +74,10 @@ PlayerSoldier
 
 		If you want to move to a location, set this to the location's coordinates.
 
-PlayerTower
+Tower
 ===========
 
-.. cpp:class:: PlayerTower
+.. cpp:class:: Tower
 
 	Represents a tower
 
@@ -103,38 +107,38 @@ PlayerTower
 
 		If you want to nuke (suicide) this tower, set this to true
 
-PlayerState
+State
 ===========
 
-.. cpp:class:: PlayerState
+.. cpp:class:: State
 
 	Represents the entire state of the game. You are given this every turn.
 
-	.. cpp:member:: array<array<PlayerMapElement, MAP_SIZE>, MAP_SIZE> map
+	.. cpp:member:: array<array<MapElement, MAP_SIZE>, MAP_SIZE> map
 
 		A 2D array of the tiles in the map
 
-	.. cpp:member:: array<PlayerSoldier, NUM_SOLDIERS> soldiers
+	.. cpp:member:: array<Soldier, NUM_SOLDIERS> soldiers
 
 		An array of your soldiers
 
-	.. cpp:member:: array<PlayerSoldier, NUM_SOLDIERS> opponent_soldiers
+	.. cpp:member:: array<Soldier, NUM_SOLDIERS> enemy_soldiers
 
 		An array of the enemy's soldiers
 
-	.. cpp:member:: array<PlayerTower, MAX_NUM_TOWERS> towers
+	.. cpp:member:: array<Tower, MAX_NUM_TOWERS> towers
 
 		An array of your towers. *Caution:* Not all of these entries are valid, use :cpp:member:`num_towers` to check how many towers you actually have.
 
-	.. cpp:member:: array<PlayerTower, MAX_NUM_TOWERS> opponent_towers
+	.. cpp:member:: array<Tower, MAX_NUM_TOWERS> enemy_towers
 
-		An array of the enemy's towers. *Caution:* Not all of these entries are valid, use :cpp:member:`num_opponent_towers` to check how many towers you actually have.
+		An array of the enemy's towers. *Caution:* Not all of these entries are valid, use :cpp:member:`num_enemy_towers` to check how many towers you actually have.
 
 	.. cpp:member:: long num_towers
 
 		Count of your towers
 
-	.. cpp:member:: long num_opponent_towers
+	.. cpp:member:: long num_enemy_towers
 
 		Count of the enemy's towers
 
