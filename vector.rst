@@ -11,7 +11,8 @@ You can do almost anything you'd do with a normal data type::
 
 	Vector c = a + b;      // c is 2.2, 1.3
 	c = a - b;             // c is -0.2, -1.3
-	c = a + 5              // Scalar addition, each component is added to the scalar, c = 6, 5
+	c = a + 5              // Scalar addition, each component is added
+	                       // to the scalar, c = 6, 5
 	c = a - 5              // Scalar subtraction, c = 1, -5
 	c = a * 5              // Scalar multiplication, c = 5, 0
 	c = a / 5.0            // Scalar division, c = 0.2, 0
