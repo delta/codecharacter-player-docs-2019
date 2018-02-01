@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Code Character'
+project = u'Documentation'
 copyright = u'2018, Delta Force'
 author = u'Delta Force'
 
