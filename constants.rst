@@ -18,7 +18,7 @@ You'll probably be using these constants frequently while writing code.
 Not So Useful Constants
 =======================
 
-These values may be good to know, but aren't very important while writing code.
+These values are be good to know, but aren't as important while writing code.
 
 Money Stuff
 -----------
@@ -89,6 +89,10 @@ Tower Stuff
 
 	A tower range of 2 means that from the center of the tower, a tower controls 2 squares in
 	each direction in a square shape, so it would control 2+1+2 times 2+1+2 = 25 squares.
+
+.. cpp:var:: long MAX_TOWER_LEVEL = 3
+
+	The highest possible level a tower can attain.
 
 .. cpp:var:: long MAX_NUM_TOWERS = 15
 
