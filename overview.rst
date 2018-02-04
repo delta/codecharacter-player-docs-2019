@@ -33,7 +33,7 @@ We'll begin with a quick run through of the concepts.
 Quick Game Rules
 ----------------
 
-Code Character is a game of strategic territory control, through the battle of troops and the construction of towers. The objective of the game is to build your towers such that you control the maximum amount of territory, represented as colored grids on the map.
+Code Character is a game of strategic territory control, through the battle of troops and the construction of towers. The objective of the game is to build your towers such that you control the maximum amount of territory, represented as colored tiles on the map.
 
 Building a tower causes the land around the tower to become your territory as long as the tower is standing, but the catch is that you can only build towers on territory you already own! So, you're given one invincible base tower, which also serves as the respawn point for your soldiers.
 
@@ -60,11 +60,11 @@ Let's look at a few examples - ::
 	auto soldier_id = soldiers[NUM_SOLDIERS - 1];
 	
 
-	// Checking if the last grid of the map is valid to build a tower on
+	// Checking if the last tile of the map is valid to build a tower on
 	if (map[MAP_SIZE - 1][MAP_SIZE - 1].valid_territory) ...
 	
 
-	// Issuing a command to build a tower at grid (4, 7)
+	// Issuing a command to build a tower at tile (4, 7)
 	map[4][7].build_tower = true;
 	
 
