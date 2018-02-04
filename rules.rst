@@ -79,7 +79,16 @@ Scoring
 
 The score is simply the number of tiles you control. If a tile is controlled by both you and your opponent, you both get it added to your score.
 
+Instruction Limit
+=================
+
+The number of instructions executed by each player's code per turn is counted while the match is being simulated. This is because there is a limit on the number of instructions that a player can execute per turn.
+
+There are two instruction limits - a turn limit and a game limit. Crossing the turn limit on any turn makes that particular turn invalid. Crossing the game limit (even once) makes the player lose the entire match.
+
 End of the Game
 ===============
 
 The game ends after a 1000 turns. As has been mentioned, the player with the most tiles in control is the winner. If both players have an equal number of tiles, the match is declared a draw.
+
+The game can also end prematurely due to any one player crossing the game instruction limit.

@@ -39,6 +39,8 @@ Building a tower causes the land around the tower to become your territory as lo
 
 Speaking of soldiers, you're given a fixed number. Your soldiers can move and attack opponent towers and soldiers, which rewards you with money. You can use your money to construct more towers and upgrade your existing towers. Upgrading a tower results in an expansion of territory and an increase in HP.
 
+You are given a fixed number of instructions you can execute every turn. Exceeding the limit on a turn makes you skip the turn. Exceeding the limit by an excessive amount makes you lose the entire match, so ensure that you keep your code as short and efficient as possible!
+
 This is probably enough for you to get a start, but you might want to take the time to read the complete rules in the rules section.
 
 Quick Code Guide
