@@ -112,4 +112,4 @@ Note that once you submit code, anyone can challenge you at anytime, and a match
 
 After submitting code, you can continue editing it. Only the submitted version of your code will be used for challenges. You can update your submitted code simply by submitting again.
 
-The leaderboard evaluates your position using your rating, which is based purely on the outcomes of your matches with other players. The stronger your opponent, the better your reward.
+The leaderboard evaluates your position using your rating, which is based purely on the outcomes of your matches with other players. The stronger your opponent, the better your reward. The Elo ranking mechanism is used to calculate ranks.
