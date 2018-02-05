@@ -6,7 +6,7 @@ This page documents almost everything you'll need to write code.
 
 It contains every data structure we use to describe the state of the game.
 
-*Note:* You can think of two ways to describe position in this game - by counting the tiles in X and Y directions (0-based counting of course, we're civilized people here), and by the actual coordinates (tiles have a size). Whenever we refer to position, we always mean the actual coordinates, not the tile count, unless explicitly otherwise mentioned.
+*Note:* You can think of two ways to describe position in this game - by counting the tiles in X and Y directions (0-based counting of course, we're civilized people here), and by the actual coordinates (tiles have a size). Whenever we refer to position, we always mean the actual coordinates, not the tile count, unless explicitly otherwise mentioned. **Remember, the X-axis is from left to right, and Y-axis is from top to bottom of the map**.
 
 MapElement
 ================
@@ -116,7 +116,7 @@ State
 
 	.. cpp:member:: array<array<MapElement, MAP_SIZE>, MAP_SIZE> map
 
-		A 2D array of the tiles in the map
+		A 2D array of the tiles in the map. ``map[i][j]`` gives you the :cpp:class:`MapElement` that is the i\ :sup:`th` tile along the X-axis (counting starts from 0) and the j\ :sup:`th` tile along the Y-axis (counting starts from 0).
 
 	.. cpp:member:: array<Soldier, NUM_SOLDIERS> soldiers
 
