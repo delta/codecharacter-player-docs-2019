@@ -77,7 +77,7 @@ Tower Stuff
 
 	Maximum HP of towers. Indexed by tower level - 1.
 
-.. cpp:var:: vector<long> TOWER_BUILD_COSTS = {500, 300, 300}
+.. cpp:var:: vector<long> TOWER_BUILD_COSTS = {800, 800, 800}
 
 	Amount of money building and upgrading a tower costs.
 
