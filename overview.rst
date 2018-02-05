@@ -52,43 +52,49 @@ All the data about the current state of the game is stored in a variable called 
 
 Let's look at a few examples - ::
 
-	// Getting the id of the first soldier
-	// Notice that you can use the auto keyword in place of a concrete type
-	auto soldier_id = soldiers[0];
+	// Getting the id of the first soldier.
+	// Notice that you can use the auto keyword in place of a concrete type.
+	auto soldier_id = state.soldiers[0].id;
 	
 	
-	// Getting the hp of the last soldier
-	// Notice that constants like NUM_SOLDIERS are available
-	auto soldier_id = soldiers[NUM_SOLDIERS - 1];
-	
-
-	// Checking if the last tile of the map is valid to build a tower on
-	if (map[MAP_SIZE - 1][MAP_SIZE - 1].valid_territory) ...
+	// Getting the hp of the last soldier.
+	// Notice that constants like NUM_SOLDIERS are available.
+	auto soldier_hp = state.soldiers[NUM_SOLDIERS - 1].hp;
 	
 
-	// Issuing a command to build a tower at tile (4, 7)
-	map[4][7].build_tower = true;
+	// Checking if the last tile of the map is valid to build a tower on.
+	if (state.map[MAP_SIZE - 1][MAP_SIZE - 1].valid_territory) ...
 	
 
-	// Issuing a command to move all soldiers to (3, 9)
-	// Notice that range-based for loops can be used
-	for (auto &soldier : soldiers) soldier->destination = Vector(3, 9);
+	// Issuing a command to build a tower at tile (4, 7).
+	state.map[4][7].build_tower = true;
 	
 
-	// Issuing a command to your first soldier to attack the first enemy soldier
-	soldiers[0].soldier_target = state.opponent_soldiers[0];
+	// Issuing a command to move all soldiers to (3, 9).
+	// Notice that range-based for loops can be used.
+	// Remember to add the reference while iterating, otherwise you'll
+	// be modifying a copy of the soldier!
+	for (auto &soldier : state.soldiers)
+		soldier.destination = Vector(3, 9);
+	
+
+	// Issuing a command to your first soldier to attack the first enemy soldier.
+	state.soldiers[0].soldier_target = state.opponent_soldiers[0].id;
 
 
 	// Issuing a command to upgrade the second tower.
-	// Use num_towers to get how many towers you actually have
-	towers[1].upgrade_tower = true;
+	// Use state.num_towers to get how many towers you actually have.
+	state.towers[1].upgrade_tower = true;
 
 
-	// Issuing a command to suicide your own tower
-	// You get about a third of the build cost and upgrades back
-	towers[0].suicide = true;
+	// Issuing a command to suicide your own tower.
+	// You get about a third of the build and upgrades cost back.
+	// Note that this parcticular suicide is an invalid move, you
+	// cannot suicide your first tower as it is your base tower.
+	// This move will simply be ignored while simulating the match.
+	state.towers[0].suicide = true;
 
-	// Return the state you've issued commands to at the END of your code
+	// Return the state you've issued commands to at the END of your code.
 	return state;
 
 For more information about ``state``, check the `player state <player_state.html>`_ page.
