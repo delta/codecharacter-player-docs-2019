@@ -26,7 +26,7 @@ Once you log in, you'll see your dashboard, as shown in the image below
 
 **On the bottom right is the debug window**. It shows your compilation errors at compile time and your debug logs and errors at runtime.
 
-**On the top right is the renderer window**, which actually displays your game. Use the Arrow Keys to pan and the '+' and '-' keys to zoom in and out of the window. The reset button will restart the game view.
+**On the top right is the renderer window**, which actually displays your game. Use the Arrow Keys to pan and the '+' and '-' keys to zoom in and out of the window. Use 'F' to toggle fullscreen mode. The reset button will restart the game view.
 
 We'll begin with a quick run through of the concepts.
 
