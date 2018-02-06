@@ -70,6 +70,11 @@ Soldier Stuff
 
 	Number of turns a soldier takes to respawn.
 
+.. cpp:var:: long SOLDIER_NUM_TURNS_INVULNERABLE = 2
+
+	Number of turns a soldier is invincible for after respawning
+
+
 Tower Stuff
 -----------
 

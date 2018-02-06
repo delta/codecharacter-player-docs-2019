@@ -54,6 +54,10 @@ Soldier
 
 		The soldier's current HP
 
+	.. cpp:member:: bool is_immune
+
+		True if this soldier is currently invulnerable to damage (having respawned recently), false otherwise
+
 	.. cpp:member:: SoldierState state
 
 		An enum describing the state of the soldier. Can be ``SoldierState::IDLE``, ``SoldierState::MOVE``, ``SoldierState::ATTACK``, ``SoldierState::PURSUIT`` or ``SoldierState::DEAD``.

@@ -24,7 +24,7 @@ Similarly, a tower with range 2 controls the 5x5 grid around the tower, and so o
 Soldiers
 --------
 
-Each player has a fixed number of soldiers that cannot be increased. Soldiers have low HP, and can attack enemy soldiers and towers. Once dead, they respawn after a fixed number of turns that cannot be decreased.
+Each player has a fixed number of soldiers that cannot be increased. Soldiers have low HP, and can attack enemy soldiers and towers. Once dead, they respawn after a fixed number of turns that cannot be decreased. Soldiers are invulnerable to all damage for a small number of turns immediately after they respawn.
 
 Starting the Game
 =================

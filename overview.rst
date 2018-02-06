@@ -35,7 +35,7 @@ Quick Game Rules
 
 Code Character is a game of strategic territory control, through the battle of troops and the construction of towers. The objective of the game is to build your towers such that you control the maximum amount of territory, represented as colored tiles on the map.
 
-Building a tower causes the land around the tower to become your territory as long as the tower is standing, but the catch is that you can only build towers on territory you already own! So, you're given one invincible base tower, which also serves as the respawn point for your soldiers.
+Building a tower causes the land around the tower to become your territory as long as the tower is standing, but the catch is that you can only build towers on territory you already own! So, you're given one invincible base tower, which also serves as the respawn point for your soldiers. Soldiers are invulnerable for a small number of turns after respawning.
 
 Speaking of soldiers, you're given a fixed number. Your soldiers can move and attack opponent towers and soldiers, which rewards you with money. You can use your money to construct more towers and upgrade your existing towers. Upgrading a tower results in an expansion of territory and an increase in HP.
 
