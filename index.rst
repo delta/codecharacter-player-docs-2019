@@ -15,6 +15,7 @@ Welcome to Code Character's documentation!
    constants
    vector
    player_state
+   default_code
 
 
 
