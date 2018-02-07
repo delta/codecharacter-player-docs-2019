@@ -1,7 +1,8 @@
-======
+============
 Default Code
-======
-Here's the default code that you're provided on first login, in case you need it again ::
+============
+
+Here's the default code that you're provided on first login, in case you need it again::
 
     #include "player_code/player_code.h"
 
