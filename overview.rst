@@ -79,7 +79,7 @@ Let's look at a few examples - ::
 	
 
 	// Issuing a command to your first soldier to attack the first enemy soldier.
-	state.soldiers[0].soldier_target = state.opponent_soldiers[0].id;
+	state.soldiers[0].soldier_target = state.enemy_soldiers[0].id;
 
 
 	// Issuing a command to upgrade the second tower.
