@@ -132,11 +132,11 @@ State
 
 	.. cpp:member:: array<Tower, MAX_NUM_TOWERS> towers
 
-		An array of your towers. *Caution:* Not all of these entries are valid, use :cpp:member:`num_towers` to check how many towers you actually have.
+		An array of your towers. *Caution:* Not all of these entries are valid, use :cpp:member:`num_towers` to check how many towers you actually have. Only elements from ``towers[0]`` to ``towers[num_towers-1]`` contain valid towers.
 
 	.. cpp:member:: array<Tower, MAX_NUM_TOWERS> enemy_towers
 
-		An array of the enemy's towers. *Caution:* Not all of these entries are valid, use :cpp:member:`num_enemy_towers` to check how many towers you actually have.
+		An array of the enemy's towers. *Caution:* Not all of these entries are valid, use :cpp:member:`num_enemy_towers` to check how many towers the enemy actually has. Only elements from ``enemy_towers[0]`` to ``enemy_towers[num_enemy_towers-1]`` contain valid enemy towers.
 
 	.. cpp:member:: long num_towers
 
