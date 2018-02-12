@@ -9,7 +9,7 @@ You'll probably be using these constants frequently while writing code.
 
 .. cpp:var:: long MAP_SIZE = 30
 
-	Side length of map.
+	Number of tiles along the side of the map.
 
 .. cpp:var:: long MAP_ELEMENT_SIZE = 50
 
