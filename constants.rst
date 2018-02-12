@@ -62,7 +62,7 @@ Soldier Stuff
 
 	Distance from which a soldier can attack.
 
-.. cpp:var::long SOLDIER_ATTACK_DAMAGE = 50
+.. cpp:var:: long SOLDIER_ATTACK_DAMAGE = 50
 
 	Damage dealt by a soldier's attack per turn.
 
