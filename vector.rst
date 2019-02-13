@@ -1,6 +1,9 @@
 ======
 Vector
 ======
+
+**TODO: Talk about Vec2D**
+
 We've written a handly utility class ``physics::Vector`` used to represent 2D Vectors (components with X and Y directions).
 You can do almost anything you'd do with a normal data type::
 

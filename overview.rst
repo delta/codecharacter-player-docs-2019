@@ -16,11 +16,7 @@ Dashboard Interface
 
 Once you log in, you'll see your dashboard, as shown in the image below
 
-.. figure:: images/dashboard.jpg
-  :width: 100%
-  :alt: Dashboard
-
-  The Dashboard
+**TODO: Insert image here**
 
 **On the left is the editor**, where you can type your code. You'll notice on logging in, that you're provided some default code. It doesn't do much in terms of strategy, but it uses most of the important elements of the code API, so a quick read through it will help.
 
@@ -32,6 +28,10 @@ We'll begin with a quick run through of the concepts.
 
 Quick Game Rules
 ----------------
+
+**TODO: Insert Rules Here**
+
+**Old Rules**
 
 Code Character is a game of strategic territory control, through the battle of troops and the construction of towers. The objective of the game is to build your towers such that you control the maximum amount of territory, represented as colored tiles on the map.
 
@@ -45,6 +45,10 @@ This is probably enough for you to get a start, but you might want to take the t
 
 Quick Code Guide
 ----------------
+
+**TODO: Insert Code Quide Here**
+
+**Old Code Quide**
 
 The way you interact with the game is through your code for the ``Update`` function, which is called every turn of the game. Here, you can issue commands to your soldiers, and build, upgrade, or destroy your towers.
 
@@ -101,6 +105,10 @@ For more information about ``state``, check the `player state <player_state.html
 
 Quick Competition Guide
 -----------------------
+
+**TODO: Insert Interface guide here**
+
+**Old Interface Guide**
 
 Ultimately, Code Character is a game of competition! The objective is to challenge other players and fight your way to the top of the leaderboard. To help you along this process, we offer pre-programmed AIs, against which you can test your code. Additionally, you can also try testing your code against itself!
 

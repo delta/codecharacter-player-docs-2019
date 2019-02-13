@@ -8,6 +8,8 @@ It contains every data structure we use to describe the state of the game.
 
 *Note:* You can think of two ways to describe position in this game - by counting the tiles in X and Y directions (0-based counting of course, we're civilized people here), and by the actual coordinates (tiles have a size). Whenever we refer to position, we always mean the actual coordinates, not the tile count, unless explicitly otherwise mentioned. **Remember, the X-axis is from left to right, and Y-axis is from top to bottom of the map**.
 
+**Old Stuff**
+
 MapElement
 ================
 
