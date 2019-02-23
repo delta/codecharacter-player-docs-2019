@@ -11,7 +11,7 @@ You'll probably be using these constants frequently while writing code.
 
 	Number of tiles along the side of the map.
 
-.. cpp:var:: long MAP_ELEMENT_SIZE = 50
+.. cpp:var:: long ELEMENT_SIZE = 10
 
 	Side length of each tile on the map.
 
@@ -20,85 +20,134 @@ Not So Useful Constants
 
 These values are be good to know, but aren't as important while writing code.
 
-Money Stuff
+Gold Stuff
 -----------
 
-.. cpp:var:: long MONEY_START = 300
+.. cpp:var:: long GOLD_START = 300
 
-	Amount of money each player has at the start of the game.
+	Amount of gold each player has at the start of the game.
 
-.. cpp:var:: long MONEY_MAX = INT64_MAX
+.. cpp:var:: long GOLD_MAX = INT64_MAX
 
-	Maximum amount of money each player can have.
+	Maximum amount of gold each player can have.
 
-.. cpp:var:: vector<long> TOWER_KILL_REWARD_AMOUNTS = {300, 500, 700}
+.. cpp:var:: long SOLDIER_COST = 200
 
-	Rewards for killing towers. Indexed by tower level - 1.
+	Amount of gold to create one soldier
+
+.. cpp:var:: long VILLAGER_COST = 200
+
+	Amount of gold to create one villager
+
+.. cpp:var:: long FACTORY_COST = 200
+
+	Amount of gold to create one factory
+
+.. cpp:var:: long FACTORY_KILL_REWARD_AMOUNTS = 600
+
+	Rewards for killing one factory.
 
 .. cpp:var:: long SOLDIER_KILL_REWARD_AMOUNT = 200
 
 	Reward for killing one soldier.
 
-.. cpp:var:: vector<long> TOWER_SUICIDE_REWARD_AMOUNT = {150, 250, 400}
+.. cpp:var:: long VILLAGER_KILL_REWARD_AMOUNT = 100
 
-	Rewards for tower sepukku. Indexed by tower level - 1.
+	Reward for killing one villager.
+
+.. cpp:var:: long FACTORY_SUICIDE_PENALTY = 200
+
+	Rewards for FACTORY sepukku.
+
+.. cpp:var:: long MINING_REWARD = 10
+
+	Amount of gold increase per villager mining
 
 Soldier Stuff
 -------------
 
-.. cpp:var:: long NUM_SOLDIERS = 20
+.. cpp:var:: long MAX_NUM_SOLDIERS = 30
 
-	Number of soldiers per player.
+	Maximum number of soldiers per player.
 
-.. cpp:var:: long SOLDIER_MAX_HP = 100
+.. cpp:var:: long SOLDIER_MAX_HP = 200
 
 	Maximum HP for a soldier.
 
-.. cpp:var:: long SOLDIER_SPEED = 50
+.. cpp:var:: long SOLDIER_SPEED = 5
 
 	Units of distance the soldier covers per turn.
 
-.. cpp:var:: long SOLDIER_ATTACK_RANGE = 60
+.. cpp:var:: long SOLDIER_ATTACK_RANGE = 5
 
 	Distance from which a soldier can attack.
 
-.. cpp:var:: long SOLDIER_ATTACK_DAMAGE = 50
+.. cpp:var:: long SOLDIER_ATTACK_DAMAGE = 10
 
 	Damage dealt by a soldier's attack per turn.
 
-.. cpp:var:: long SOLDIER_TOTAL_TURNS_TO_RESPAWN = 10
+Villager Stuff
+--------------
 
-	Number of turns a soldier takes to respawn.
+.. cpp:var:: long NUM_VILLAGERS_START = 10
 
-.. cpp:var:: long SOLDIER_NUM_TURNS_INVULNERABLE = 2
+	Number of villagers each player starts with.
 
-	Number of turns a soldier is invincible for after respawning
+.. cpp:var:: long MAX_NUM_VILLAGERS = 30
 
+	Maximum number of villagers per player.
 
-Tower Stuff
------------
+.. cpp:var:: long VILLAGER_MAX_HP = 80
 
-.. cpp:var:: vector<long> TOWER_HPS = {7000, 10000, 15000}
+	Maximum HP for a villager.
 
-	Maximum HP of towers. Indexed by tower level - 1.
+.. cpp:var:: long VILLAGER_SPEED = 5
 
-.. cpp:var:: vector<long> TOWER_BUILD_COSTS = {800, 800, 800}
+	Units of distance the villager covers per turn.
 
-	Amount of money building and upgrading a tower costs.
+.. cpp:var:: long VILLAGER_ATTACK_RANGE = 5
 
-	0th element is build cost, 1st and 2nd elements are for 1st and 2nd upgrades respectively.
+	Distance from which a villager can attack.
 
-.. cpp:var:: vector<long> TOWER_RANGES = {2, 3, 4}
+.. cpp:var:: long VILLAGER_ATTACK_DAMAGE = 5
 
-	Amount of territory a tower controls. Indexed by tower level - 1.
+	Damage dealt by a villager's attack per turn.
 
-	A tower range of 2 means that from the center of the tower, a tower controls 2 squares in
-	each direction in a square shape, so it would control 2+1+2 times 2+1+2 = 25 squares.
+.. cpp:var:: long VILLAGER_BUILD_EFFORT = 3
 
-.. cpp:var:: long MAX_TOWER_LEVEL = 3
+	Contribution of villager to building per turn.
 
-	The highest possible level a tower can attain.
+.. cpp:var:: long VILLAGER_BUILD_RANGE = 5
 
-.. cpp:var:: long MAX_NUM_TOWERS = 15
+	Distance from which a villager can build.
 
-	Maximum number of towers per player allowed.
+.. cpp:var:: long VILLAGER_MINE_RANGE = 5
+
+	Distance from which a villager can mine.
+
+Factory Stuff
+-------------
+
+.. cpp:var:: long MAX_NUM_FACTORIES = 20
+
+	Maximum number of factories per player.
+
+.. cpp:var:: long FACTORY_BASE_HP = 1
+
+	HP of an unbuilt factory.
+
+.. cpp:var:: long FACTORY_MAX_HP = 3000
+
+	Maximum HP for a factory.
+
+.. cpp:var:: long FACTORY_CONSTRUCTION_TOTAL = 300
+
+	Total construction effort needed per factory
+
+.. cpp:var:: long FACTORY_VILLAGER_FREQUENCY = 10
+
+	Frequency with which a factory produces villagers.
+
+.. cpp:var:: long FACTORY_SOLDIER_FREQUENCY = 10
+
+	Frequency with which a factory produces soldiers.
