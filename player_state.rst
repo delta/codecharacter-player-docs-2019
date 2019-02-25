@@ -8,7 +8,7 @@ It contains every data structure we use to describe the state of the game.
 
 If you haven't already, you might want to go through the game overview first, to understand the core game and the various elements that you can control. Once you've got a hang of the game, this page will help you dive deeper into your code.
 
-You might want to checkout `Vector <vector.html>` as well.
+You might want to checkout `Vector <vector.html>`_ as well.
 
 *Note:* You can think of two ways to describe position in this game - by counting the tiles in X and Y directions (0-based counting of course, we're civilized people here), and by the actual coordinates (tiles have a size). Whenever we refer to position, we always mean the actual coordinates, not the tile count, unless explicitly otherwise mentioned. **Remember, the X-axis is from left to right, and Y-axis is from top to bottom of the map**.
 
@@ -22,7 +22,7 @@ State
 
 	.. cpp:member:: array<array<TerrainType, MAP_SIZE>, MAP_SIZE> map
 
-		The map is a 2D array of `TerrainType` elements, which tell you if a particular type is Land, Water, or a Gold Mine. Remember, your units are not Jesus, and can't walk on Water.
+		The map is a 2D array of `TerrainType` elements, which tell you if a particular type is **LAND**, **WATER**, or a **GOLD_MINE**. Remember, your units are not Jesus, and can't walk on Water.
 
 		If you're unfamiliar with `std::array` in C++, simply use map like a standard 2D array in C.
 
@@ -105,7 +105,7 @@ Soldier
 
 	.. cpp:member:: SoldierState state
 
-		The current state of the soldier. This member tells you what the soldier is doing right now, and has values `IDLE`, `MOVE`, and `ATTACK`.
+		The current state of the soldier. This member tells you what the soldier is doing right now, and has values **IDLE**, **MOVE**, and **ATTACK**.
 
 		For example, to check for all your soldiers who are currently battling, you could do ::
 
@@ -159,7 +159,7 @@ Villager
 
 	.. cpp:member:: VillagerState state
 
-		The current state of the villager. This member tells you what the villager is doing right now, and has values `IDLE`, `MOVE`, `BUILD`, `ATTACK`, and `MINE`.
+		The current state of the villager. This member tells you what the villager is doing right now, and has values **IDLE**, **MOVE**, **BUILD**, **ATTACK**, and **MINE**.
 
 		For example, to check for all your villagers who are idle, you could do ::
 
