@@ -2,7 +2,7 @@
 Vector
 ======
 
-We've written a handly utility class ``Vec2D`` used to represent 2D Vectors (components with X and Y directions).
+We've written a handy utility class ``Vec2D`` used to represent 2D Vectors (components with X and Y directions).
 You can do almost anything you'd do with a normal data type::
 
 	Vec2D a(1, 0);           // a.x = 1, a.y = 0

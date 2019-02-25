@@ -29,15 +29,15 @@ We'll begin with a quick run through of the concepts.
 Quick Game Rules
 ----------------
 
-**TODO: Insert Rules Here**
+Code Character is a game of strategic .. . The objective of the game is to expand your empire and eliminate your opponent.
 
-**Old Rules**
+Your empire consists of villagers, soldiers and factories. Factories are stationary units that produce soldiers and villagers which are capable of moving and attacking other units. Ofcourse, soldiers are more powerful than villagers.
 
-Code Character is a game of strategic territory control, through the battle of troops and the construction of towers. The objective of the game is to build your towers such that you control the maximum amount of territory, represented as colored tiles on the map.
+In addition, villagers can mine gold from the goldmines and build factories. Factories can toggle between producing villagers and soldiers.
 
-Building a tower causes the land around the tower to become your territory as long as the tower is standing, but the catch is that you can only build towers on territory you already own! So, you're given one invincible base tower, which also serves as the respawn point for your soldiers. Soldiers are invulnerable for a small number of turns after respawning.
+The map has three types of terrain - Land, Water and Goldmines. Water is inaccessible to all units. 
 
-Speaking of soldiers, you're given a fixed number. Your soldiers can move and attack opponent towers and soldiers, which rewards you with money. You can use your money to construct more towers and upgrade your existing towers. Upgrading a tower results in an expansion of territory and an increase in HP.
+**TODO: Insert image of map**
 
 You are given a fixed number of instructions you can execute every turn. Exceeding the limit on a turn makes you skip the turn. Exceeding the limit by an excessive amount makes you lose the entire match, so ensure that you keep your code as short and efficient as possible!
 
@@ -45,10 +45,6 @@ This is probably enough for you to get a start, but you might want to take the t
 
 Quick Code Guide
 ----------------
-
-**TODO: Insert Code Quide Here**
-
-**Old Code Quide**
 
 The way you interact with the game is through your code for the ``Update`` function, which is called every turn of the game. Here, you can issue commands to your soldiers, and build, upgrade, or destroy your towers.
 
@@ -59,44 +55,29 @@ Let's look at a few examples - ::
 	// Getting the id of the first soldier.
 	// Notice that you can use the auto keyword in place of a concrete type.
 	auto soldier_id = state.soldiers[0].id;
-	
-	
-	// Getting the hp of the last soldier.
-	// Notice that constants like NUM_SOLDIERS are available.
-	auto soldier_hp = state.soldiers[NUM_SOLDIERS - 1].hp;
-	
 
-	// Checking if the last tile of the map is valid to build a tower on.
-	if (state.map[MAP_SIZE - 1][MAP_SIZE - 1].valid_territory) ...
-	
-
-	// Issuing a command to build a tower at tile (4, 7).
-	state.map[4][7].build_tower = true;
-	
-
-	// Issuing a command to move all soldiers to (3, 9).
-	// Notice that range-based for loops can be used.
-	// Remember to add the reference while iterating, otherwise you'll
-	// be modifying a copy of the soldier!
-	for (auto &soldier : state.soldiers)
-		soldier.destination = Vector(3, 9);
-	
+	// Checking if the last tile of the map is valid to build a factory on
+	// Notice how constants like MAP_SIZE exist for your ease
+	if (state.map[MAP_SIZE - 1][MAP_SIZE - 1] == TerrainType::LAND) ...
 
 	// Issuing a command to your first soldier to attack the first enemy soldier.
-	state.soldiers[0].soldier_target = state.enemy_soldiers[0].id;
+	state.soldiers[0].attack( state.enemy_soldiers[0] );
 
+	// Issuing a command to send a villager to mine in the first goldmine
+	// Notice the usage of Vec2D, a utility class we have defined.
+	Vec2D gold_mine_offset = state.gold_mine_offsets[0];
+	state.villagers[0].mine( gold_mine_offset );
 
-	// Issuing a command to upgrade the second tower.
-	// Use state.num_towers to get how many towers you actually have.
-	state.towers[1].upgrade_tower = true;
+	// Issuing a command to set the production state of a factory
+	state.factories[0].toggle_production();
 
-
-	// Issuing a command to suicide your own tower.
-	// You get about a third of the build and upgrades cost back.
-	// Note that this parcticular suicide is an invalid move, you
-	// cannot suicide your first tower as it is your base tower.
-	// This move will simply be ignored while simulating the match.
-	state.towers[0].suicide = true;
+	// Issuing a command to all villagers to build factory at (2, 10).
+	// We specify what we want the factory to produce using the second parameter.
+	// Notice that range-based for loops can be used.
+	// Remember to add the reference while iterating, otherwise you'll
+	// be modifying a copy of the villager!
+	for (auto &villager : state.villagers)
+		villager.build( Vec2D(2,10), FactoryProduction::SOLDIER );
 
 	// Return the state you've issued commands to at the END of your code.
 	return state;
@@ -106,13 +87,11 @@ For more information about ``state``, check the `player state <player_state.html
 Quick Competition Guide
 -----------------------
 
-**TODO: Insert Interface guide here**
-
-**Old Interface Guide**
-
 Ultimately, Code Character is a game of competition! The objective is to challenge other players and fight your way to the top of the leaderboard. To help you along this process, we offer pre-programmed AIs, against which you can test your code. Additionally, you can also try testing your code against itself!
 
 This is done through the opponent selection interface in **Run Code**
+
+**TODO - Insert images after each para/line **
 
 .. figure:: images/runcode.jpg
   :width: 500px
