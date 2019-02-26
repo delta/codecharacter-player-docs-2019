@@ -6,11 +6,9 @@ This page documents almost everything you'll need to write code.
 
 It contains every data structure we use to describe the state of the game.
 
-If you haven't already, you might want to go through the game overview first, to understand the core game and the various elements that you can control. Once you've got a hang of the game, this page will help you dive deeper into your code.
+If you haven't already, you might want to go through the game `overview <overview.html>`_ first, to understand the core game and the various elements that you can control. Once you've got a hang of the game, this page will help you dive deeper into your code.
 
 You might want to checkout `Vector <vector.html>`_ as well.
-
-*Note:* You can think of two ways to describe position in this game - by counting the tiles in X and Y directions (0-based counting of course, we're civilized people here), and by the actual coordinates (tiles have a size). Whenever we refer to position, we always mean the actual coordinates, not the tile count, unless explicitly otherwise mentioned. **Remember, the X-axis is from left to right, and Y-axis is from top to bottom of the map**.
 
 State
 =====
@@ -133,9 +131,19 @@ Soldier
 
 			state.soldiers[0].attack( state.enemy_soldiers[0] );
 
-			state.soldiers[1].attack( state.enemy_soldiers[1] );
+			state
+
+.. figure:: images/villagerGuide.png
+	:width: 200px
+	:alt: Player Villagers.soldiers[1].attack( state.enemy_soldiers[1] );
 
 			state.soldiers[2].attack( state.enemy_soldiers[2] );
+	
+	.. cpp:function:: Vec2D closest_gold_mine(Vec2D position)
+
+		A helper function to find the closest_gold_mine to the given position. This method does not guarantee that the gold mine is accessible.
+
+		For more information, check down below in the Helpers section.
 
 
 Villager
@@ -297,10 +305,71 @@ Factory
 
 			state.factories[0].toggle_production();
 
+Helpers
+=======
+
+Along with the game state, we've included some helper methods to make it easier for you to implement your logic. One common operation that you'd need to perform is converting between positions and offsets. For example, a factory is build using an offset, but when examined, it's position will be in *position* units, and **not** *offsets*.
+
+So, we have some simple methods to convert between positions and offsets.
+
+	.. cpp:function:: Vec2D PositionToOffset(Vec2D position)
+
+		Returns the offset (i.e the grid) inside which the given position is located.
+
+		.. figure:: images/positionToOffset.png
+			:width: 400px
+  			:alt: Positions to Offset Diagram
+
+
+	.. cpp:function:: Vec2D OffsetToPositon(Vec2D offset)
+
+		Returns the center position of the given offset. Note that factories and gold mines are actually point objects, situated at the center of the offset that they are represented by.
+
+		.. figure:: images/offsetToPosition.png
+			:width: 400px
+  			:alt: Offset to Position Diagram
+
+	.. cpp:function:: Vec2D State::closest_gold_mine(Vec2D position)
+
+
+		As previously stated in the ``State`` section, this is a member function that gives you the closest_gold mine to a given location. You can use it like this ::
+
+			auto &villager = state.villagers[0];
+			if (!state.gold_mine_offsets.empty()) {
+				villager.mine(state.closest_gold_mine( villager.position );
+			}
+
+		If you're interested, here's how this helper is implemented. You might get an idea of how to incorporate some more of the Code Character API into your code. ::
+
+			Vec2D State::closest_gold_mine(Vec2D position) {
+				// Initialize min distance and the closest gold mine (if it exists)
+				double min_distance = std::numeric_limits<double>::max();
+				Vec2D closest_gold_mine = gold_mine_offsets.size() ? gold_mine_offsets[0] : Vec2D::null;
+
+				// For each gold mine...
+				for (auto &gold_mine : gold_mine_offsets) {
+
+					// If there's a closer gold mine, set it
+					auto gold_mine_position = OffsetToPosition(gold_mine);
+					auto distance_to_gold_mine = gold_mine_position.distance(position);
+
+					if (distance_to_gold_mine < min_distance) {
+							min_distance = distance_to_gold_mine;
+							closest_gold_mine = gold_mine;
+					}
+				}
+
+				return closest_gold_mine;
+			}
+		
+		Note that you can do things like ``position1.distance(position2)``, where both positions are ``Vec2D`` objects, to find Euclidean distance. 
+}
+
+
 Other
 =====
 
-Note that *everything* shown above is printable. You can log any of this to output and view it in your game log.
+Note that *everything* shown above is printable. You can log any of this to output and view it in your game log. (Remember to use ``logr`` and not ``cout``!)
 
 For example, if you want to print out the properties of a particular Villager, you could do::
 

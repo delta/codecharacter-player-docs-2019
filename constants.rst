@@ -2,6 +2,8 @@
 Constants
 =========
 
+These are the magic constants that affect the game logic. You are free to access any of these constants from your code - they are in global scope.
+
 Useful Constants
 ================
 
@@ -15,7 +17,9 @@ You'll probably be using these constants frequently while writing code.
 
 	Side length of each tile on the map.
 
-Not So Useful Constants
+
+
+Some Other Constants
 =======================
 
 These values are be good to know, but aren't as important while writing code.

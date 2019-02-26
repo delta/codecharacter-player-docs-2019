@@ -1,12 +1,19 @@
-======
-Vector
-======
+=====
+Vec2D
+=====
+
+.. figure:: images/vec2dGuide.png
+	:width: 250px
+	:alt: Vec2D in use
 
 We've written a handy utility class ``Vec2D`` used to represent 2D Vectors (components with X and Y directions).
 You can do almost anything you'd do with a normal data type::
 
 	Vec2D a(1, 0);           // a.x = 1, a.y = 0
 	Vec2D b(2, 2);
+
+	Vec2D swap_a = Vec2D(a.y, a.x);
+							 // Swap x and y into a new Vec2D
 
 	Vec2D c = a + b;         // c is 3, 2
 	c = a - b;               // c is -1, -2
@@ -26,7 +33,7 @@ You can do almost anything you'd do with a normal data type::
 
 	logr << a;               // Prints "(1, 0)" without the quotes
 
-We also have DoubleVec2D, in case you'd like use some floating points::
+We also have ``DoubleVec2D``, in case you'd like use some floating points::
 
 	DoubleVec2D x(5.0, 3.0)  // You can do anything you could do with Vec2D
 
@@ -41,5 +48,7 @@ Bonus
 =====
 
 The Vec2D and DoubleVec2D are simply aliases of the the Vector class, which is a templated type. Vec2D corresponds to `Vector<int64_t>` and DoubleVec2D is `Vector<double>`.
+
+This means that you can do things like ``Vector<uint8_t>(3, 4)``, if for any reason you need
 
 In case you want to use any other numeric type, feel free to do `Vector<your_numeric_type>` but you should be fine using just Vec2D and the occasional DoubleVec2D.

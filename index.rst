@@ -13,9 +13,10 @@ Welcome to Code Character's documentation!
    overview
    rules
    constants
-   vector
+   vec2d
    player_state
    default_code
+   tips
 
 
 
