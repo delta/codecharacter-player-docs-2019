@@ -12,7 +12,7 @@ Hello, and welcome to the player documentation for **Code Character**!
 Code Character is a programming strategy game where you control troops in a turn-based game with code you write - in our favorite language C++ :)
 
 Let's get started with a quick tutorial on how to get started. If you'd rather start with the rules and documentation, you can start the `Rules <rules.html>`_ instead.
-s
+
 Quick Start
 ===========
 
@@ -126,14 +126,20 @@ Ultimately, Code Character is a game of competition! The objective is to challen
 
 This is done through the opponent selection interface in :guilabel:`Run Code`
 
-**TODO - Insert images after each para/line **
+.. figure:: images/interfaceGuide.png
+  :width: 500px
+  :alt: Code Character Interface
 
-Buttons to :guilabel:`Run Code` for testing, and :guilabel:`Submit Code` for competition
+You can run code on three different maps, against either *your own* code, or against one of our preprogrammed AIs.
 
-Once you're satisfied with your code and want to compete on the leaderboard, hit :guilabel:`Submit Code`. This will freeze the current version of your code and let you challenge anyone who has also submitted code to the leaderboard. To challenge another player, simply click the challenge button next to their nickname on the leaderboard.
+Once you're satisfied with your code and want to compete on the leaderboard, hit :guilabel:`Submit Code`. This will freeze the current version of your code and let you challenge anyone who has also submitted code to the leaderboard. To challenge another player, simply click the challenge button next to their nickname on the leaderboard. You can keep submitting and updating your code whenever you want.
 
 Note that once you submit code, anyone can challenge you at anytime, and a match will automatically be simulated between you and the opposing player. You will receive a notification once the match ends, and you can view it in the :guilabel:`Matches` tab.
 
-After submitting code, you can continue editing it. Only the submitted version of your code will be used for challenges. You can update your submitted code simply by submitting again.
+.. figure:: images/matchInterfaceGuide.png
+  :width: 300px
+  :alt: Match Interface
 
-The leaderboard evaluates your position using your rating, which is based purely on the outcomes of your matches with other players. The stronger your opponent, the better your reward. The Elo ranking mechanism is used to calculate ranks.
+For each of your matches, 5 games are played on 5 different maps. You can only see the first three games, the last two are mystery maps! If you win the best of five, you win the match and your rating will increase. Challenge and defeat players with higher ratings to boost your rating furthur.
+
+The leaderboard evaluates your position using your rating, which is based purely on the outcomes of your matches with other players. The Elo ranking mechanism is used to calculate ranks.

@@ -131,11 +131,7 @@ Soldier
 
 			state.soldiers[0].attack( state.enemy_soldiers[0] );
 
-			state
-
-.. figure:: images/villagerGuide.png
-	:width: 200px
-	:alt: Player Villagers.soldiers[1].attack( state.enemy_soldiers[1] );
+			state.soldiers[1].attack( state.enemy_soldiers[1] );
 
 			state.soldiers[2].attack( state.enemy_soldiers[2] );
 	

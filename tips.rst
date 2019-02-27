@@ -47,3 +47,15 @@ Let's say for whatever reason, you'd like to sort your villagers by hp. Since ``
 	); 
 
 	// Log the villagers
+
+Vec2D has several methods
+-------------------------
+
+``Vec2D`` has several common operations, like calculating distance and scalar multiplication programmed in. Use these methods to avoid writing more code.::
+
+	Vec2D position1(3, 5);
+	Vec2D position2(4, 23);
+
+	double distance = position1.distance(position2);
+
+Check out the `Vec2D <vec2d.html>`_ page if you haven't already.
