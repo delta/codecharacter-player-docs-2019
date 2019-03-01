@@ -126,6 +126,7 @@ You are rewarded for the following
 
 1. Killing an opponent's units (soldiers, villagers or factories)
 2. Completing building a factory
+3. Keeping your units alive. The more turns your units and factories stay alive, the more age bonusses you get.
 3. The amount of gold you have left at the end of the game
 
 Instruction Limit

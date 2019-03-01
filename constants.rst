@@ -27,7 +27,7 @@ These values are be good to know, but aren't as important while writing code.
 Gold Stuff
 -----------
 
-.. cpp:var:: long GOLD_START = 300
+.. cpp:var:: long GOLD_START = 1800
 
 	Amount of gold each player has at the start of the game.
 
@@ -97,11 +97,11 @@ Villager Stuff
 
 	Maximum number of villagers per player.
 
-.. cpp:var:: long VILLAGER_MAX_HP = 50
+.. cpp:var:: long VILLAGER_MAX_HP = 90
 
 	Maximum HP for a villager.
 
-.. cpp:var:: long VILLAGER_SPEED = 5
+.. cpp:var:: long VILLAGER_SPEED = 4
 
 	Units of distance the villager covers per turn.
 
@@ -109,11 +109,11 @@ Villager Stuff
 
 	Distance from which a villager can attack.
 
-.. cpp:var:: long VILLAGER_ATTACK_DAMAGE = 9
+.. cpp:var:: long VILLAGER_ATTACK_DAMAGE = 5
 
 	Damage dealt by a villager's attack per turn.
 
-.. cpp:var:: long VILLAGER_BUILD_EFFORT = 4
+.. cpp:var:: long VILLAGER_BUILD_EFFORT = 6
 
 	Contribution of villager to building per turn.
 
@@ -140,7 +140,7 @@ Factory Stuff
 
 	Maximum HP for a factory.
 
-.. cpp:var:: long FACTORY_CONSTRUCTION_TOTAL = 1000
+.. cpp:var:: long FACTORY_CONSTRUCTION_TOTAL = 300
 
 	Total construction effort needed per factory
 
